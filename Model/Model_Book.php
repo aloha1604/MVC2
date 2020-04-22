@@ -84,7 +84,7 @@ class Model_Book extends Db
 		$sql = "insert into book values(?,?,?,?,?,?,?)";
 		$arr = array($book_id, $book_name, $description, $price, $img, $pub_id, $cat_id);
 
-		return parent::selectQuery($sql, $arr);
+		return parent::updateQuery($sql, $arr);
 	}
 	function deleteBook($book_id)
 	{
