@@ -1,4 +1,4 @@
-x<?php
+<?php
 function getIndex($index, $default='')
 {
 	return isset($_GET[$index])?$_GET[$index]:$default;

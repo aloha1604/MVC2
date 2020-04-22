@@ -48,7 +48,7 @@ table tr td {
 	width: 400px;
 	border: solid 2px;
 	border-radius: 20px;
-	height: 400px;
+	height: 500px;
 	display: flex;
 	justify-content: center;
 	align-items: center;	
@@ -56,6 +56,14 @@ table tr td {
 
 #tittle {
 	text-align: center;
+}
+
+#form-insert-id input {
+	width: 150px;
+	height: 25px;
+	margin-bottom: 20px;
+	text-align: center;
+	margin-left: 9px;
 }
 
 #form-insert-name input {
