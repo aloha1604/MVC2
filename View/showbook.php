@@ -3,10 +3,10 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Quan Li Sach</title>
-	<link href="../assets/admin_style.css" rel="stylesheet" type="text/css" />
+	<link href="<?php echo BASE_URL ?>/assets/admin_style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<a href="../view/insertbook.php"><button>Thêm Sách</button></a>
+	<a href="<?php echo BASE_URL ?>/index.php?controller=Home&action=showInsert"><button>Thêm Sách</button></a>
 	<br>
 	<table border="1">
 		<tr>
@@ -19,8 +19,8 @@
 			<td>ID Loại</td>
 			<td colspan="2">Chức Năng</td>
 		</tr>
-		<!-- <?php 
-			foreach ($datasach as $key => $value) {
+		<?php 
+			foreach ($dataBook as $key => $value) {
 		?>
 		<tr>
 			<td><?php echo $value['book_id'] ?></td>
@@ -30,12 +30,12 @@
 			<td><?php echo $value['img'] ?></td>
 			<td><?php echo $value['pub_id'] ?></td>
 			<td><?php echo $value['cat_id'] ?></td>
-			<td><a href="#"><button>Xóa</button></a></td>
-			<td><a href="#"><button>Sửa</button></a></td>
+			<td><a href="<?php echo BASE_URL ?>/view/updatebook.php/<?php echo $value['book_id'] ?>"><button>Xóa</button></a></td>
+			<td><a href="<?php echo BASE_URL ?>/view/updatebook.php/<?php echo $value['book_id'] ?>"><button>Sửa</button></a></td>
 		</tr>
 		<?php
 			}
-		?> -->
+		?> 
 
 		<tr>
 			<td>1</td>

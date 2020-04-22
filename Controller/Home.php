@@ -29,23 +29,21 @@ class Home
 		$dataBook = $this->book->getBook();
 
 
-		echo "<pre>";	print_r($dataBook);
-		echo "<pre>";	print_r($dataCategory);
-		echo "<pre>";	print_r($dataPublisher);
-
 		include "View/showbook.php";
+	}
+
+	function showInsert()
+	{
+	
+		include "View/insertbook.php";
 	}
 
 	function showUpdate_view()
 	{
 		if (isset($_GET['id'])){
 			$book_id = $_GET['id'];
-			$dataCategory 	= $this->category->getllAllCategory();
-			$dataPublisher 	= $this->publisher->getAllPublisher();
 			$getBookById  	= $this->book->getBookById($book_id);
-			echo "<pre>";	print_r($getBookById);
-			echo "<pre>";	print_r($dataCategory);
-			echo "<pre>";	print_r($dataPublisher);
+		
 		}else{
 			echo "khong update duoc";
 		}
@@ -192,6 +190,7 @@ class Home
 		}else{
 			echo "khong hien thi chi tiet duoc";
 		}
+
 		
 	}
 

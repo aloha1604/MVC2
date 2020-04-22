@@ -16,7 +16,7 @@
 				<div id="form-insert-gia">Giá: <input type="tetx" name="gia" value="<?php echo $datasach['price'] ?>"></div>
 				<div id="form-insert-hinhanh">Chọn Ảnh: <input type="file[]" name="hinhanh" multiple="multiple"></div>
 				<br>
-				<div id="tittle"><input type="submit" value="Cập Nhật"></div>
+				<div id="tittle"><input type="submit" value="Cập Nhật" name="updateBook"></div>
 			</form>
 		</div>
 	</div>
