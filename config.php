@@ -5,5 +5,5 @@ define("PASS_DB", '');
 define("DB", 'bookstore');
 
 define ('ROOT', dirname(__FILE__));
-define ('BASE_URL', 'http://localhost/MVC1');
+define ('BASE_URL', 'http://localhost/MVC2');
 define('UPLOAD_IMG', ROOT .'/image/book');
