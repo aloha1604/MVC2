@@ -44,18 +44,8 @@ class Home
 	{
 		if (isset($_GET['id'])){
 			$book_id = $_GET['id'];
-
 			$getBookById  	= $this->book->getBookById($book_id);
-			
 			include "View/updatebook.php";
-
-			/*$dataCategory 	= $this->category->getllAllCategory();
-			$dataPublisher 	= $this->publisher->getAllPublisher();*/
-			$getBookById  	= $this->book->getBookById($book_id);
-			
-			include "View/updatebook.php";
-			
-
 		}else{
 			echo "khong update duoc";
 		}
@@ -122,6 +112,12 @@ class Home
                     	//truy van du dieu
                        $this->book->insertBook($book_id,$book_name,$description,$price,$hinhanhsp,$pub_id,$cat_id);
 
+       				  // print_r($book_id);
+             //          print_r($book_name);
+             //          print_r($description);
+             //          print_r($price);
+             //          print_r($hinhanhsp);
+
                        // hien thi views
                       	/*index();*/
                       	header('location:../MVC2/index.php?controller=Home&action=index');
@@ -136,7 +132,7 @@ class Home
 
 	
 
-	function updateBook($id)
+	function updateBook()
 	{
 		if (isset($_POST['updateBook'])){
 			// lay du lieu tu post form
@@ -179,14 +175,17 @@ class Home
                     }
                     if(move_uploaded_file($tmp,$path)){
                     	//truy van du dieu
-                       $this->book->updateBook($book_id,$book_name,$description,$price,$hinhanhsp);
+                      $this->book->updateBook($book_id,$book_name,$description,$price,$hinhanhsp);
+
 
                        // hien thi views
+                      	/*index();*/
                       	header('location:../MVC2/index.php?controller=Home&action=index');
-
                     }
                  }
             }
+             // $this->book->updateBook($book_id,$book_name,$description,$price,$hinhanhsp);
+
 		}else{
 			echo "khong update duoc";
 		}
@@ -197,7 +196,7 @@ class Home
 		if (isset($_GET['id'])){
 			$book_id = $_GET['id'];
 			/*print_r($book_id);*/
-			$getBookById  	= $this->book->deleteBook($book_id);
+			 $this->book->deleteBook($book_id);
 			/*index();*/
 			header('location:../MVC2/index.php?controller=Home&action=index');
 

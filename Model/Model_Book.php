@@ -2,7 +2,11 @@
 class Model_Book extends Db
 {
 		
-	
+	function getBook()
+	{
+		return $this->getTable('book');
+	}
+
 
 	function filter($name, $cat_id='all', $pub_id='all')
 	{
@@ -49,7 +53,6 @@ class Model_Book extends Db
 		return 0;
 	}
 
-	//vuong lam
 	function getAllBook()
 	{
 		$sql = "select *, category.cat_name, publisher.pub_name
@@ -70,21 +73,20 @@ class Model_Book extends Db
 	{
 		$sql = "insert into book values(?,?,?,?,?,?,?)";
 		$arr = array($book_id, $book_name, $description, $price, $img, $pub_id, $cat_id);
-
-		return parent::updateQuery($sql, $arr);
+		return parent::selectQuery($sql, $arr);
 	}
 	function deleteBook($book_id)
 	{
 		$sql = "delete from book where book_id = ?";
 		$arr = array($book_id);
 		
-		return parent::updateQuery($sql, $arr);
+		return parent::selectQuery($sql, $arr);
 	}
 	function updateBook($book_id, $book_name, $description, $price, $img)
 	{
 		$sql = "update book set book_name = ?, description = ?, price = ?, img = ? where book_id = ?";
 		$arr = array($book_name, $description, $price, $img, $book_id);
 		
-		return parent::updateQuery($sql, $arr);
+		return parent::selectQuery($sql, $arr);
 	}
 }

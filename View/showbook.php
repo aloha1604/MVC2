@@ -31,8 +31,7 @@
 			<td><?php echo $value['pub_id'] ?></td>
 			<td><?php echo $value['cat_id'] ?></td>
 
-			<td><a href="<?php echo BASE_URL ?>/view/updatebook.php?controller=Home&book_id=<?php echo $value['book_id'] ?>"><button>Xóa</button></a></td>
-
+			
 			<td><a href="<?php echo BASE_URL ?>/index.php?controller=Home&action=deleteBook&id=<?php echo $value['book_id'] ?>"><button>Xóa</button></a></td>
 
 			<td><a href="<?php echo BASE_URL ?>/index.php?controller=Home&action=showUpdate_view&id=<?php echo $value['book_id'] ?>"><button>Sửa</button></a></td>
@@ -42,22 +41,7 @@
 
 		?> 
 
-		<tr>
-			<td>1</td>
-			<td>Rau Sạch</td>
-			<td>
-
-</td>
-			<td>69000</td>
-			<td>abc.jpg</td>
-			<td>1</td>
-			<td>2</td>
-			<td><a href=""><button>Xóa</button></a></td>
-			<td><a href="../view/updatebook.php"><button>Sửa</button></a></td>
-		</tr>
-
-
-		?>
+		
 
 	</table>
 </body>
