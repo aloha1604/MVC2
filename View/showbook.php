@@ -30,11 +30,16 @@
 			<td><?php echo $value['img'] ?></td>
 			<td><?php echo $value['pub_id'] ?></td>
 			<td><?php echo $value['cat_id'] ?></td>
+<<<<<<< HEAD
 			<td><a href="<?php echo BASE_URL ?>/view/updatebook.php?controller=Home&book_id=<?php echo $value['book_id'] ?>"><button>Xóa</button></a></td>
+=======
+			<td><a href="<?php echo BASE_URL ?>/index.php?controller=Home&action=deleteBook&id=<?php echo $value['book_id'] ?>"><button>Xóa</button></a></td>
+>>>>>>> hoangan
 			<td><a href="<?php echo BASE_URL ?>/index.php?controller=Home&action=showUpdate_view&id=<?php echo $value['book_id'] ?>"><button>Sửa</button></a></td>
 		</tr>
 		<?php
 			}
+<<<<<<< HEAD
 		?> 
 
 		<tr>
@@ -51,6 +56,9 @@
 			<td><a href="../view/updatebook.php"><button>Sửa</button></a></td>
 		</tr>
 
+=======
+		?>
+>>>>>>> hoangan
 	</table>
 </body>
 </html>
