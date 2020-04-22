@@ -67,7 +67,7 @@ class Home
 	
 	function insertBook()
 	{
-		if (isset($_POST['updateBook'])){
+		if (isset($_POST['insertBook'])){
 			// lay du lieu tu post form
 			$book_id 		= $_POST['id'];
 			$book_name 		= $_POST['book_name'];
@@ -119,7 +119,7 @@ class Home
                  }
             }
 		}else{
-			echo "khong update duoc";
+			echo "khong them  duoc";
 		}
 		
 	}
