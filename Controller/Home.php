@@ -28,19 +28,9 @@ class Home
 		$dataPublisher = $this->publisher->getAllPublisher();
 		$dataBook = $this->book->getBook();
 
-		
-		/*echo "<pre>";	print_r($dataBook);
-		echo "<pre>";	print_r($dataCategory);
-		echo "<pre>";	print_r($dataPublisher);*/
-
-
 		include "View/showbook.php";
 	}
 
-
-	function showInsert()
-	{
-	
 
 	function showInsert(){
 
@@ -217,13 +207,5 @@ class Home
 
 		
 	}
-
-
-	// function searchBook()
-	// {
-	// 	$data = $this->model->searchBook(getIndex('book_name'));
-	// 	include "View/home_showBook.php";
-	// }
-
 
 }

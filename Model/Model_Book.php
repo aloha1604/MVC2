@@ -2,21 +2,7 @@
 class Model_Book extends Db
 {
 		
-	function getBook()
-	{
-		return $this->getTable('book');
-	}
-
-	function getCat()
-	{
-		return $this->getTable('category');
-	}
-
-	function getPub()
-	{
-		return $this->getTable('publisher');
-	}
-
+	
 
 	function filter($name, $cat_id='all', $pub_id='all')
 	{
@@ -63,6 +49,7 @@ class Model_Book extends Db
 		return 0;
 	}
 
+	//vuong lam
 	function getAllBook()
 	{
 		$sql = "select *, category.cat_name, publisher.pub_name
