@@ -27,7 +27,7 @@
 			<td><?php echo $value['book_name'] ?></td>
 			<td><?php echo $value['description'] ?></td>
 			<td><?php echo $value['price'] ?></td>
-			<td><?php echo $value['img'] ?></td>
+			<td><img style=" width: 80px; height: 80px" src="<?php echo BASE_URL ?>/assets/images<?php echo $value['img'] ?>" alt=""></td>
 			<td><?php echo $value['pub_id'] ?></td>
 			<td><?php echo $value['cat_id'] ?></td>
 
