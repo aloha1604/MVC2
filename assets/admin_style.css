@@ -1,0 +1,118 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+
+table {
+	width: 1400px;
+	height: auto;
+	border-collapse: collapse;
+}
+
+table tr td {
+	text-align: center;
+	height: 50px;
+	word-wrap: break-word;
+}
+
+
+.form {
+	width: 1300px;
+	height: 600px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+
+#wallper{
+	height: 700px;
+	width: 1000px;
+	display: flex;
+	flex-direction: column;
+	font-family: sans-serif;
+}
+
+.form-page-insert {
+	width: auto;
+	height: 600px;
+	display: flex;
+	align-items: center;
+	justify-content: center;	
+}
+
+.form-insert {
+	width: 400px;
+	border: solid 2px;
+	border-radius: 20px;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+}
+
+#tittle {
+	text-align: center;
+}
+
+#form-insert-name input {
+	width: 150px;
+	height: 25px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#form-insert-mota textarea {
+	width: 153px;
+	margin-left: 16px;
+}
+
+#form-insert-hinhanh input{
+	width: 190px;
+	
+	margin-bottom: 20px;
+}
+
+#form-insert-gia input {
+	width: 150px;
+	height: 25px;
+	margin-bottom: 20px;
+	margin-left: 35px;
+}
+
+#form-insert-nxb select{
+	margin-left: 11px;
+	margin-bottom: 20px;
+}
+
+#form-insert-loai {
+	margin-bottom: 20px;
+}
+
+#tittle input {
+	width: 80px;
+	height: 40px;
+	border-radius: 10px;
+	border-collapse: collapse;
+}
+
+table {
+	height: auto;
+	width: 1400px;
+	border-collapse: collapse;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	font-family: sans-serif;
+}
+
+/*-----------------------ADMIN-------------------------------------------------*/
+
+
