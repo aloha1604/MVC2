@@ -177,6 +177,12 @@ class Home
                     	//truy van du dieu
                       $this->book->updateBook($book_id,$book_name,$description,$price,$hinhanhsp);
 
+       				  // print_r($book_id);
+             //          print_r($book_name);
+             //          print_r($description);
+             //          print_r($price);
+             //          print_r($hinhanhsp);
+
 
                        // hien thi views
                       	/*index();*/
