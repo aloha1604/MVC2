@@ -27,25 +27,32 @@ class Home
 		$dataCategory = $this->category->getllAllCategory();
 		$dataPublisher = $this->publisher->getAllPublisher();
 		$dataBook = $this->book->getBook();
-
-
-		echo "<pre>";	print_r($dataBook);
+		
+		/*echo "<pre>";	print_r($dataBook);
 		echo "<pre>";	print_r($dataCategory);
-		echo "<pre>";	print_r($dataPublisher);
+		echo "<pre>";	print_r($dataPublisher);*/
 
 		include "View/showbook.php";
+	}
+
+	function showInsert(){
+
+		$dataCategory 	= $this->category->getllAllCategory();
+		$dataPublisher 	= $this->publisher->getAllPublisher();
+
+		include "View/insertbook.php";
 	}
 
 	function showUpdate_view()
 	{
 		if (isset($_GET['id'])){
 			$book_id = $_GET['id'];
-			$dataCategory 	= $this->category->getllAllCategory();
-			$dataPublisher 	= $this->publisher->getAllPublisher();
+			/*$dataCategory 	= $this->category->getllAllCategory();
+			$dataPublisher 	= $this->publisher->getAllPublisher();*/
 			$getBookById  	= $this->book->getBookById($book_id);
-			echo "<pre>";	print_r($getBookById);
-			echo "<pre>";	print_r($dataCategory);
-			echo "<pre>";	print_r($dataPublisher);
+			
+			include "View/updatebook.php";
+			
 		}else{
 			echo "khong update duoc";
 		}
@@ -79,7 +86,7 @@ class Home
 			
 			// xu ly du lieu anh, va update
 		   $i=0;      
-            foreach($_FILES['file']['name'] as $i => $name){
+            foreach(array($_FILES['file']['name']) as $i => $name){
                 $name= $_FILES['file']['name'][$i];
                 $type= $_FILES['file']['type'][$i];
                 $size= $_FILES['file']['size'][$i];
@@ -113,8 +120,8 @@ class Home
                        $this->book->insertBook($book_id,$book_name,$description,$price,$hinhanhsp,$pub_id,$cat_id);
 
                        // hien thi views
-                      	index();
-
+                      	/*index();*/
+                      	header('location:../MVC2/index.php?controller=Home&action=index');
                     }
                  }
             }
@@ -138,7 +145,7 @@ class Home
 			
 			// xu ly du lieu anh, va update
 		   $i=0;      
-            foreach($_FILES['file']['name'] as $i => $name){
+            foreach(array($_FILES['file']['name']) as $i => $name){
                 $name= $_FILES['file']['name'][$i];
                 $type= $_FILES['file']['type'][$i];
                 $size= $_FILES['file']['size'][$i];
@@ -172,7 +179,7 @@ class Home
                        $this->book->updateBook($book_id,$book_name,$description,$price,$hinhanhsp);
 
                        // hien thi views
-                      	index();
+                      	header('location:../MVC2/index.php?controller=Home&action=index');
 
                     }
                  }
@@ -186,9 +193,11 @@ class Home
 	{
 		if (isset($_GET['id'])){
 			$book_id = $_GET['id'];
-			print_r($book_id);
+			/*print_r($book_id);*/
 			$getBookById  	= $this->book->deleteBook($book_id);
-			index();
+			/*index();*/
+			header('location:../MVC2/index.php?controller=Home&action=index');
+
 		}else{
 			echo "khong hien thi chi tiet duoc";
 		}
