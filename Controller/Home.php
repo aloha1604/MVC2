@@ -140,10 +140,12 @@ class Home
 			$book_name 		= $_POST['book_name'];
 			$description 	= $_POST['description'];
 			$price 			= $_POST['price'];
-		
-			
-			// xu ly du lieu anh, va update
-		   $i=0;      
+			$hinhanh		= $_POST['hinhanh'];
+			if($_FILES['file']['error'] != 0){
+				$this->book->updateBook($book_id,$book_name,$description,$price,$hinhanh);
+             	header('location:../MVC2/index.php?controller=Home&action=index');
+				// xu ly du lieu anh, va update
+			$i=0;      
             foreach(array($_FILES['file']['name']) as $i => $name){
                 $name= $_FILES['file']['name'][$i];
                 $type= $_FILES['file']['type'][$i];
@@ -175,7 +177,7 @@ class Home
                     }
                     if(move_uploaded_file($tmp,$path)){
                     	//truy van du dieu
-                      $this->book->updateBook($book_id,$book_name,$description,$price,$hinhanhsp);
+                         $this->book->updateBook($book_id,$book_name,$description,$price,$hinhanhsp);
 
        				  // print_r($book_id);
              //          print_r($book_name);
@@ -183,15 +185,15 @@ class Home
              //          print_r($price);
              //          print_r($hinhanhsp);
 
-
                        // hien thi views
                       	/*index();*/
                       	header('location:../MVC2/index.php?controller=Home&action=index');
                     }
                  }
             }
-             // $this->book->updateBook($book_id,$book_name,$description,$price,$hinhanhsp);
-
+            }else{
+             
+            }
 		}else{
 			echo "khong update duoc";
 		}
