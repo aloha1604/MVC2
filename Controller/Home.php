@@ -43,7 +43,8 @@ class Home
 		if (isset($_GET['id'])){
 			$book_id = $_GET['id'];
 			$getBookById  	= $this->book->getBookById($book_id);
-		
+			
+			include "View/updatebook.php";
 		}else{
 			echo "khong update duoc";
 		}

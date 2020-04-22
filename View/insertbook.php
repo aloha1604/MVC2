@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Quan Li Sach</title>
-	<link href="../assets/admin_style.css" rel="stylesheet" type="text/css" />
+	<link href="<?php echo BASE_URL ?>/assets/admin_style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<div class="form-page-insert">	

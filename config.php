@@ -1,7 +1,7 @@
 <?php
 define("HOST_DB", 'localhost');
 define("USER_DB", 'root');
-define("PASS_DB", '123456');
+define("PASS_DB", '');
 define("DB", 'bookstore');
 
 define ('ROOT', dirname(__FILE__));
