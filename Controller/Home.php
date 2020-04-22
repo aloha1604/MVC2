@@ -67,52 +67,61 @@ class Home
 	
 	function insertBook()
 	{
-		// sữa book
-		// lay thong tin tu form post len
-		  if (isset($_POST['themhinh'])) {
-                $idchitiet = $_POST['idchitiet'];
-                $idsp = $_POST['idsp'];
+		if (isset($_POST['updateBook'])){
+			// lay du lieu tu post form
+			$book_id 		= $_POST['id'];
+			$book_name 		= $_POST['book_name'];
+			$description 	= $_POST['description'];
+			$price 			= $_POST['price'];
+			$pub_id			= $_POST['pub_id'];
+			$cat_id			= $_POST['cat_id'];
+		
+			
+			// xu ly du lieu anh, va update
+		   $i=0;      
+            foreach($_FILES['file']['name'] as $i => $name){
+                $name= $_FILES['file']['name'][$i];
+                $type= $_FILES['file']['type'][$i];
+                $size= $_FILES['file']['size'][$i];
+                $tmp= $_FILES['file']['tmp_name'][$i];
+                
+                //tách đuôi
+                $explode= explode('.',$name);
+                $ex= end($explode);
+                $path='./assets/images';
+                
+                $path=$path . basename($explode[0].time().'.'.$ex);
+                $hinhanhsp= basename($explode[0].time().'.'.$ex);
+                $thongbao=array();
+                        
+                if(empty($tmp)){
+                    echo $thongbao[]='Hay chon 1 file!';
+                }else{
+                    $chophep=array('jpg','img','gif');
+                    $max_size=400000000;
+                    if(in_array($ex,$chophep) === false){
+                        echo $thongbao[]='File nhu ...';
+                    }else if($size > $max_size){
+                        echo $thongbao[]='File to vay a....';
+                    }
+                }if(empty($thongbao)){
+                    if(!file_exists('./assets/images')){
+                        mkdir('./assets/images',0777);
+                    }
+                    if(move_uploaded_file($tmp,$path)){
+                    	//truy van du dieu
+                       $this->book->insertBook($book_id,$book_name,$description,$price,$hinhanhsp,$pub_id,$cat_id);
 
-                  $i=0;      
-                foreach($_FILES['file']['name'] as $i => $name){
-                    $name= $_FILES['file']['name'][$i];
-                    $type= $_FILES['file']['type'][$i];
-                    $size= $_FILES['file']['size'][$i];
-                    $tmp= $_FILES['file']['tmp_name'][$i];
-                    
-                    //tách đuôi
-                    $explode= explode('.',$name);
-                    $ex= end($explode);
-                    $path='./assets/images';
-                    
-                    $path=$path . basename($explode[0].time().'.'.$ex);
-                    $hinhanhsp= basename($explode[0].time().'.'.$ex);
-                    $thongbao=array();
-                            
-                    if(empty($tmp)){
-                        echo $thongbao[]='Hay chon 1 file!';
-                    }else{
-                        $chophep=array('jpg','img','gif');
-                        $max_size=400000000;
-                        if(in_array($ex,$chophep) === false){
-                            echo $thongbao[]='File nhu ...';
-                        }else if($size > $max_size){
-                            echo $thongbao[]='File to vay a....';
-                        }
-                    }if(empty($thongbao)){
-                        if(!file_exists('./assets/images')){
-                            mkdir('./assets/images',0777);
-                        }
-                        if(move_uploaded_file($tmp,$path)){
-                        	//thu hien du lieu
-                           $this->hinhAnh->insert_HinhAnh($idchitiet,$hinhanhsp);
-                          	// call view
-                                                   }
-                     }
-                }
-                  // Call Views
-            	include "View/showbook.php";  
+                       // hien thi views
+                      	index();
+
+                    }
+                 }
             }
+		}else{
+			echo "khong update duoc";
+		}
+		
 	}
 
 	
