@@ -74,7 +74,7 @@ class Model_Book extends Db
 	}
 	function getBookById($book_id)
 	{
-		$sql = "select * from book where ?";
+		$sql = "select * from book where book_id = ?";
 		$arr = array($book_id);
 
 		return parent::selectQuery($sql, $arr);
