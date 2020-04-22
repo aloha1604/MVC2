@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Class Home
  * index.php?controller=Home&action=index
@@ -27,29 +27,26 @@ class Home
 		$dataCategory = $this->category->getllAllCategory();
 		$dataPublisher = $this->publisher->getAllPublisher();
 		$dataBook = $this->book->getBook();
-<<<<<<< HEAD
 
-=======
 		
 		/*echo "<pre>";	print_r($dataBook);
 		echo "<pre>";	print_r($dataCategory);
 		echo "<pre>";	print_r($dataPublisher);*/
->>>>>>> hoangan
+
 
 		include "View/showbook.php";
 	}
 
-<<<<<<< HEAD
+
 	function showInsert()
 	{
 	
-=======
+
 	function showInsert(){
 
 		$dataCategory 	= $this->category->getllAllCategory();
 		$dataPublisher 	= $this->publisher->getAllPublisher();
 
->>>>>>> hoangan
 		include "View/insertbook.php";
 	}
 
@@ -57,18 +54,18 @@ class Home
 	{
 		if (isset($_GET['id'])){
 			$book_id = $_GET['id'];
-<<<<<<< HEAD
+
 			$getBookById  	= $this->book->getBookById($book_id);
 			
 			include "View/updatebook.php";
-=======
+
 			/*$dataCategory 	= $this->category->getllAllCategory();
 			$dataPublisher 	= $this->publisher->getAllPublisher();*/
 			$getBookById  	= $this->book->getBookById($book_id);
 			
 			include "View/updatebook.php";
 			
->>>>>>> hoangan
+
 		}else{
 			echo "khong update duoc";
 		}
